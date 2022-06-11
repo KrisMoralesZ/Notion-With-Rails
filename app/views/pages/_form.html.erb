@@ -1,0 +1,59 @@
+<%= form_with(model: page) do |form| %>
+  <% if page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :slug, class: 'form-label' %>
+      <%= form.text_field :slug, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :body, class: 'form-label' %>
+      <%= form.text_area :body, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :parent_id, class: 'form-label' %>
+      <%= form.text_field :parent_id, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :account_id, class: 'form-label' %>
+      <%= form.text_field :account_id, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :position, class: 'form-label' %>
+      <%= form.number_field :position, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <% if page.persisted? %>
+      <div class="float-end">
+        <%= link_to 'Destroy', page, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if page.persisted? %>
+      <%= link_to "Cancel", page, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", pages_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
