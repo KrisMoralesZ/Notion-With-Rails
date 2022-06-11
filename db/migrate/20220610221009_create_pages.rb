@@ -4,8 +4,8 @@ class CreatePages < ActiveRecord::Migration[7.0]
       t.string :title
       t.string :slug
       t.text :body
-      t.references :parent, null: true, foreign_key: true
-      t.references :account, null: false, foreign_key: true
+      #t.references :parent, null: true, foreign_key: true
+      #t.references :account, null: false, foreign_key: true
       t.integer :position
 
       t.timestamps
