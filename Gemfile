@@ -53,7 +53,10 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 
   #rspec
-  gem 'rspec-rails', ">= 3.9.0"
+  gem 'rspec-rails', "~> 5.1"
+
+  #FactoryBot
+  gem 'factory_bot_rails', '~> 6.2'
 end
 
 group :development do
@@ -89,3 +92,5 @@ gem "sidekiq", "~> 6.2"
 gem "sitemap_generator", "~> 6.1"
 gem "whenever", require: false
 gem "responders", github: "heartcombo/responders", branch: "main"
+
+gem "acts_as_list", "~> 1.0"

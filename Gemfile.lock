@@ -75,6 +75,8 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    acts_as_list (1.0.4)
+      activerecord (>= 4.2)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     bcrypt (3.1.18)
@@ -112,6 +114,11 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.10.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     faraday (2.3.0)
       faraday-net_http (~> 2.0)
       ruby2_keywords (>= 0.0.4)
@@ -338,11 +345,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  acts_as_list (~> 1.0)
   bootsnap
   capybara
   cssbundling-rails
   debug
   devise (~> 4.8, >= 4.8.0)
+  factory_bot_rails (~> 6.2)
   friendly_id (~> 5.4)
   importmap-rails
   jbuilder
@@ -359,7 +368,7 @@ DEPENDENCIES
   pundit (~> 2.1)
   rails (~> 7.0.3)
   responders!
-  rspec-rails (>= 3.9.0)
+  rspec-rails (~> 5.1)
   selenium-webdriver
   sidekiq (~> 6.2)
   sitemap_generator (~> 6.1)
